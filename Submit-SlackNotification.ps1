@@ -19,24 +19,24 @@ $OSDOUCN = $tsenv.Value("OSDOUCN")
 $FirmwareRev = $tsenv.Value("OSDDeviceFirmwareVersion")
 # Create POST Body (hashtable)
 $body = @{
-    name = $deviceName
-    auth = $authCode
-    time = $timestamp
-    install = $InstallType
-    ou = $OSDOUCN
-    macaddress = $MAC
-    firmware = $FirmwareRev
-    osdata = $OSData
+  name = $deviceName
+  auth = $authCode
+  time = $timestamp
+  install = $InstallType
+  ou = $OSDOUCN
+  macaddress = $MAC
+  firmware = $FirmwareRev
+  osdata = $OSData
 }
 # Create Headers
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/x-www-form-urlencoded")
 # Parameter Hashtable
 $Params = @{
-    Uri = $checkinUrl
-    Method = "Post"
-    Headers = $headers
-    Body = $body
+  Uri = $checkinUrl
+  Method = "Post"
+  Headers = $headers
+  Body = $body
 }
 # Submit!
 $response = Invoke-RestMethod @Params
