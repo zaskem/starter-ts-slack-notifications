@@ -47,9 +47,9 @@ Invoking this in a `Run PowerShell Script` Task Sequence step should provide the
 #### `Submit-DirectTeamsNotification.ps1`
 This script is what would be invoked (by Package reference or a direct Powershell script in the step) as one of the final steps in your Task Sequence. Only line 2 _requires_ editing, but the variables in lines 16-18 are custom variables and not available by default so they need to be set or otherwise changed/removed along with their tailing references.
 
-Edit line 2 (`$teamsWebhookURL`) to be the FQDN for your Slack webhook.
+Edit line 2 (`$teamsWebhookURL`) to be the FQDN and path for your Teams webhook.
 
-Invoking this in a `Run PowerShell Script` Task Sequence step should provide the same Slack notification as the multi-step process.
+Invoking this in a `Run PowerShell Script` Task Sequence step should provide the same Teams notification as the other processes.
 
 The [companion blog post](https://mzonline.com/blog/2024-11/using-powershell-send-teams-notification-task-sequence-step) digs into some of the nuance and differences when using Teams webhooks versus Slack. 
 
